@@ -18,7 +18,7 @@ namespace RepairRequestsProject
             LoadAllRequests();
         }
 
-        private void LoadAllRequests()
+        public void LoadAllRequests()
         {
             var requests = dbContext.Requests
                 .Select(r => new

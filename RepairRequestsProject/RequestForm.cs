@@ -173,6 +173,8 @@ namespace RepairRequestsProject
             // Обновление DataGridView в MainFormClient
             var mainForm = Application.OpenForms.OfType<MainFormClient>().FirstOrDefault();
             mainForm?.LoadClientRequests();
+            var mainFormOp = Application.OpenForms.OfType<MainFormOperator>().FirstOrDefault();
+            mainFormOp?.LoadAllRequests();
         }
     }
 }
