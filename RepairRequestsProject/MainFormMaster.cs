@@ -42,12 +42,14 @@ namespace RepairRequestsProject
                     .Select(r => new
                     {
                         r.requestID,
-                        r.masterID, // Добавление masterID
+                        r.masterID,
                         r.homeTechType,
                         r.homeTechModel,
                         r.problemDescription,
                         Comment = r.MasterComments.FirstOrDefault(mc => mc.masterID == selectedMasterId).message
                     }).ToList();
+
+                dataGridView1.DataSource = requests;
 
                 if (requests.Count == 0)
                 {
@@ -55,11 +57,9 @@ namespace RepairRequestsProject
                 }
                 else
                 {
-                    dataGridView1.DataSource = requests;
-
                     // Настраиваем отображение столбцов
                     dataGridView1.Columns["requestID"].HeaderText = "ID заявки";
-                    dataGridView1.Columns["masterID"].HeaderText = "ID мастера"; // Настройка столбца masterID
+                    dataGridView1.Columns["masterID"].HeaderText = "ID мастера";
                     dataGridView1.Columns["homeTechType"].HeaderText = "Тип техники";
                     dataGridView1.Columns["homeTechModel"].HeaderText = "Модель техники";
                     dataGridView1.Columns["problemDescription"].HeaderText = "Описание проблемы";
@@ -102,7 +102,6 @@ namespace RepairRequestsProject
                     {
                         masterComment = new MasterComments
                         {
-                            // commentID не нужно устанавливать, так как он будет генерироваться автоматически
                             requestID = selectedRequestId,
                             masterID = selectedMasterId,
                             message = richTextBoxMaster.Text
@@ -111,7 +110,6 @@ namespace RepairRequestsProject
                     }
                     else
                     {
-                        // commentID не нужно изменять, так как он уже существует
                         masterComment.message = richTextBoxMaster.Text;
                     }
 
@@ -152,6 +150,5 @@ namespace RepairRequestsProject
                 MessageBox.Show("Пожалуйста, выберите заявку из списка.", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-
     }
 }
