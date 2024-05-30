@@ -1,0 +1,169 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{68E70A20-B50E-42B7-B5C5-34EAF29B35FF}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>RepairRequestsProject</RootNamespace>
+    <AssemblyName>RepairRequestsProject</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Model\Clients.cs" />
+    <Compile Include="Model\ClientsReviews.cs" />
+    <Compile Include="HelpFormForMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HelpFormForMaster.Designer.cs">
+      <DependentUpon>HelpFormForMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFormClient.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFormClient.Designer.cs">
+      <DependentUpon>MainFormClient.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFormManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFormManager.Designer.cs">
+      <DependentUpon>MainFormManager.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFormMaster.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFormMaster.Designer.cs">
+      <DependentUpon>MainFormMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MainFormOperator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainFormOperator.Designer.cs">
+      <DependentUpon>MainFormOperator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Managers.cs" />
+    <Compile Include="Model\MasterComments.cs" />
+    <Compile Include="Model\MasterQualityManager.cs" />
+    <Compile Include="Model\Masters.cs" />
+    <Compile Include="Model\Model1.cs" />
+    <Compile Include="Model\Operators.cs" />
+    <Compile Include="Model\Parts.cs" />
+    <Compile Include="Model\PartsOrders.cs" />
+    <Compile Include="PartsOrdersForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PartsOrdersForm.Designer.cs">
+      <DependentUpon>PartsOrdersForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="RequestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RequestForm.Designer.cs">
+      <DependentUpon>RequestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Model\Requests.cs" />
+    <Compile Include="SignForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SignForm.Designer.cs">
+      <DependentUpon>SignForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Model\sysdiagrams.cs" />
+    <Compile Include="Model\Users.cs" />
+    <EmbeddedResource Include="HelpFormForMaster.resx">
+      <DependentUpon>HelpFormForMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFormManager.resx">
+      <DependentUpon>MainFormManager.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFormMaster.resx">
+      <DependentUpon>MainFormMaster.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFormOperator.resx">
+      <DependentUpon>MainFormOperator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PartsOrdersForm.resx">
+      <DependentUpon>PartsOrdersForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="RequestForm.resx">
+      <DependentUpon>RequestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SignForm.resx">
+      <DependentUpon>SignForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainFormClient.resx">
+      <DependentUpon>MainFormClient.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
